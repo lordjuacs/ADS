@@ -30,6 +30,7 @@ int main() {
     first->display();
     assert(first->pop_front() == -1);
     first->display();
+    delete first;
 #endif
 #ifdef test2
     CircularArray<double>* second = new CircularArray<double>(5);
@@ -45,6 +46,7 @@ int main() {
     second->display();
     second->insert(7, 0);
     second->display();
+    delete second;
 #endif
     return 0;
 }
