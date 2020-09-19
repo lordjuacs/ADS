@@ -5,13 +5,10 @@
 #ifndef LIST_LIST_H
 #define LIST_LIST_H
 #include <iostream>
+#include <exception>
+#include "Node.h"
 using namespace std;
-template<typename T>
-struct Node {
-    T data;
-    Node<T>* next;
-    Node<T>* prev;
-};
+
 
 template<typename T>
 class List {
@@ -22,8 +19,7 @@ protected:
 
 public:
     List() : head(nullptr), tail(nullptr), nodes(0) {};
-    ~List();
-
+    virtual ~List(){};
     virtual T front() = 0;
     virtual T back() = 0;
     virtual void push_front(T) = 0;
@@ -36,6 +32,7 @@ public:
     virtual void clear() = 0;
     virtual void sort() = 0;
     virtual void reverse() = 0;
+    virtual void display() = 0;
 };
 
 
